@@ -16,12 +16,11 @@ services:
   db:
     image: postgres:12.0-alpine
     volumes:
-      - postres_data:/var/lib/postgresql/data/
-    env_file: ./.env.dev
+      - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGERS_PASSWORD=${DB_PASSWORD}
-      - POSTGERS_DB=${DB_NAME}
+      - POSTGRES_USER=private_diary
+      - POSTGERS_PASSWORD=Testpass123
+      - POSTGERS_DB=private_diary_dev
 
 volumes:
   postgres_data:
